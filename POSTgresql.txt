@@ -224,7 +224,42 @@ Values (2017, 'Russ', 'Ruddoch','Male', ' ', DATE ' ','Norway')
 ON CONFLICT(id) DO NOTHING;
 
 
+INSERT INTO person (id, first_name, last_name, gender, email, date_of_birth, country_of_birth)
+Values (2017, 'Russ', 'Ruddoch','Male', ' ', DATE ' ','Norway') ON CONFLICT(id) DO UPDATE SET email = EXCLUDED.email;
 
+
+
+UPDATE person SET car_id=1 WHERE id=2;
+UPDATE person SET car_id=2 WHERE id=1;
+SELECT * FROM person JOIN car ON person.car_id=car.id
+SELECT person.first_name, car.make, car.model, car.price FROM person JOIN car ON person.car_id=car.id
+SELECT * FROM person LEFT JOIN car ON car.id=person.car_id
+SELECT * FROM person WHERE car_id IS NULL
+SELECT * FROM person LEFT JOIN car ON car.id=person.car_id WHERE car.* IS NULL
+
+
+
+SELECT * FROM person LEFT JOIN ON car.id=person.car_id
+\copy (SELECT * FROM person LEFT JOIN ON car.id=person.car_id) TO '/Users.. ' DELIMITER ',' CSV HEADERS
+SELECT * FROM person_id_seq
+SELECT nextval(   )
+ALTER SEQUENCE person_id_seq RESTART WITH 10
+
+
+SELECT * FROM pg_a
+SELECT * FROM pg_available_extensions
+CREATE EXTENSION IF NOT EXIST "uuid-ossp"
+SELECT * FROM pg_available_extensions
+
+\df
+SELECT uuid_generate_v4()
+
+
+UPDATE person SET car_uid=' ' WHERE person_uid=' '
+SELECT * FROM person JOIN car ON person.car_uid=car.car_uid
+SELECT * FROM person JOIN car USING (car_uid)
+SELECT * FROM person LEFT JOIN car USING (car_uid)
+SELECT * FROM person LEFT JOIN car USING (car_uid) WHERE car.* IS NULL
 
 
 
