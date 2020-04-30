@@ -1,0 +1,234 @@
+clear+enter (clears workspace)
+clc+enter (clears command window)
+
+who
+whos
+disp(blanks(3)')
+fprintf('    %d.\n',variable)
+
+5/10
+5\10
+
+a=3:7
+b=3:3:15
+c=3:3:14
+d=20:-4:4
+lins=linspace(7,35,5)
+logsp=logspace(1,5,5)
+e=[c d]
+
+ceil(14.01)
+floor(14.99)
+round(14.5)
+round(14.499)
+round(14.485,2)
+round(175,-2)
+mod(176,9)
+deg2rad(270)
+rad2deg(3)
+
+rand
+rng(256)
+rng('shuffle')
+rng('default')
+rand*100
+randi([1,100])
+randn
+
+rvec=[1 2 3 4 5]
+cvec=[6;7;8;9;10]
+cvec2=rvec'
+rvec2=[11:15]
+mat1=[14,15,16;17,18,19]
+mat2=[31:33; 34:36]
+size(mat2)
+
+vec1=[8:14]
+vec1(1)
+vec1(2)
+mat1=[6:8;1:3:7]
+mat1(2,3)
+mat1(5)
+
+vec1=[1:5]
+vec2=vec1+5
+mat1=[14:18; 21:25]
+mat2=mat1-8
+mat1+mat2
+mat1.*mat2
+mat1*mat2
+size(ans)
+
+vec1=[3:6:33]
+min(vec1)
+max(vec1)
+sum(vec1)
+prod(vec1)
+vec2=rand(5)
+vec2=rand(1,5)
+prod(vec2)
+cumsum(vec1)
+cumprod(vec2)
+cummin(vec1)
+cummax(vec2)
+mat1=[14 5 9; 2 8 7]
+sum(mat1)
+cumsum(mat1)
+
+zeros(4)
+zeros(2,3)
+ones(4)
+ones(3,2)
+matrand=rand(2,4)
+matrandi=randi([7,17],5,4)
+matrand2=rand(3)
+eye(3)
+matrand2*eye(3)
+matrand2*ones(3)
+
+mat1=[1:5; 6:10]
+mat2=mat1'
+mat3=[12,3;14,8]
+mat4=inv(mat3)
+eye(2)
+mat3*mat4
+mat5=[4 2 8; -2 0 -4 1; 1 4 2 0; 3 -1 6 -2]
+inv(mat5)
+
+MATLAB SCRIPTS
+sphvol.m
+%{ Comment block %}
+radius=7
+vol=4*pi*radius^3/3
+
+
+inputvolume.m
+radius=input('Enter the radius of the sphere: ')
+volume=4*pi*radius^3/3
+
+Run the script
+Go to command window->inputvolume
+
+
+triarea.m
+base=input('Enter the base of the triangle: ');
+height=input('Enter the height of the triangle: ');
+t_area=0.5*base*height
+
+
+*Write values to an external file
+mat1=[1:2:7; 2:2:8]
+save matrixdata mat1 -ascii
+type matrixdata
+mat2=[3:3:12]
+save matrixdata mat2 -ascii -append
+type matrixdata
+
+
+*Load values from file into the script
+mat1=[4:4:16; 5:5:20]
+save matrixdata.dat mat1 -ascii
+load matrixdata.dat
+matrixdata
+
+*Create a user-defined function
+circum.f
+function crcmf =circumf(radius)
+  crcmf = 2*pi*radius
+end
+
+In the command window
+circumf(3)
+
+function tra =triarea(base, height)
+  tra=0.5*base*height
+end
+
+In the command window
+triarea(6,10)
+
+
+*If/If-Else
+cooltime.m
+function ct = cooltime()
+  val1 = input('Time in seconds for the glass to cool 20 degrees: \n');
+  if val1 > 25
+	disp('That time is above the projected range. ')
+  else
+	if val1 > 10
+	   disp('That time is within the expected range. ')
+	else("Time is below expected range.')
+	end
+  end
+end
+
+
+*Switch 
+spcode.m
+function spc = spcode()
+
+val1 = input('Enter the number of the center: \n');
+
+switch val1
+	case 14
+	    spc= 'Mt. Crawford';
+	case 15
+	    spc= 'Portland';
+	otherwise
+	    spc = 'Not recognised.';
+end
+end
+
+
+
+*Is statements
+str1 = 'card'
+ischar(str1)
+isletter(str1)
+str2='card51'
+isletter(str2)
+val1=14
+isreal(val1)
+isa(val1,'int8')
+isa(val1, 'double')
+
+
+*For loop
+fortest.m
+vec1=[1 2 3 4];
+for i = 1:length(vec1)
+	disp(vec1(i))
+end
+
+mat1=[1:3;4:6];
+matsize=size(mat1);
+for i = 1:matsize(2)
+	disp(mat1(1,i))
+end
+
+mat1=[1:3;4:6];
+matsize=size(mat1);
+for i = 1:matsize(2)
+	for j = 1:matsize(1)
+	    disp(mat1(j,i))
+	end
+end
+
+*While loop
+totalweight = 0;
+nextitem=0;
+wtlim= input('Max weight: \n');
+while totalweight + nextitem <= wtlim
+	totalweight=totalweight+nextitem;
+	nextitem=randi([1,5]);
+end
+
+fprintf('Total weight is %d grams. \n', totalweight)
+
+
+
+
+
+
+
+
