@@ -1,0 +1,24 @@
+This was shared by my company Director(Machine Learning), thought of sharing this with everyone since we all are starting our journey with Python.
+It’s called “The Zen of Python”, written by Tim Peters(major contributor to python).
+These are the basic guiding principles for writing good programs in python. Do give it a read
+https://www.python.org/dev/peps/pep-0020/
+Explanation for all the above principles in the below article:
+https://inventwithpython.com/blog/2018/08/17/the-zen-of-python-explained/
+
+
+If someone is eager for more assignments in Python you can do some on your own. Hackerrank: https://www.hackerrank.com/ is a good place to be and start practicing on interesting problems, https://leetcode.com/ for the ones feeling more advanced.
+
+
+For anyone who's curious about multiple inheritance https://stackoverflow.com/questions/3277367/how-does-pythons-super-work-with-multiple-inheritance/3277407#3277407 provides more details
+
+And here’s a useful link to understand ClassName.attribute, public vs private attributes and how to delete an instance - https://www.python-course.eu/python3_class_and_instance_attributes.php
+
+another helpful link on class-based inheritance : https://medium.com/faun/class-based-inheritance-in-object-oriented-programming-9d388d44f089
+
+if anyone is keen to learn about custom-defined exceptions - https://www.geeksforgeeks.org/user-defined-exceptions-python-examples/
+
+and this explains it well too - https://www.programiz.com/python-programming/user-defined-exception
+
+https://www.tutorialspoint.com/complex-numbers-in-python
+
+https://www.techbeamers.com/use-try-except-python/
